@@ -4,6 +4,26 @@ import './Login.css'
 
 export default class Login extends React.Component {
 
+    constructor() {
+        super()
+        this.state = {
+            username: '',
+            password: '',
+        }
+
+        this.handleChange = this.handleChange.bind(this)
+    }
+
+    handleChange(e) {
+        const target = e.target
+        const value = target.value
+        const name = target.name
+
+        this.setState({
+            [name]: value
+        })
+    }
+
     render() {
         return (
                 <div class="form-container">
@@ -19,7 +39,7 @@ export default class Login extends React.Component {
                         <label for="username">Username</label>
                     </div>
                     <div>
-                        <input type="text" class="form-input" id="username"/>
+                        <input type="text" class="form-input" id="username" name="username" value={this.state.username} onChange={this.handleChange} />
                     </div>
                 </div>
                 <div id="password-section" class="row-custom">
@@ -27,7 +47,7 @@ export default class Login extends React.Component {
                         <label for="password">Password</label>
                     </div>
                     <div>
-                        <input type="password" class="form-input" id="password"/>
+                        <input type="password" class="form-input" id="password" name="password" value={this.state.password} onChange={this.handleChange} />
                     </div>
                 </div>
             </div>

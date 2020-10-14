@@ -3,6 +3,30 @@ import './Register.css'
 
 export default class Register extends React.Component {
 
+    constructor() {
+        super()
+        this.state = {
+            username: '',
+            password: '',
+            firstName: '',
+            lastName: '',
+            email: '',
+            agreeTerms: false,
+            receiveUpdates: false,
+        }
+        this.handleChange = this.handleChange.bind(this)
+    }
+
+    handleChange(e) {
+        const target = e.target
+        const value = target.type === 'checkbox' ? target.checked : target.value
+        const name = target.name
+        
+        this.setState({
+            [name]: value
+        })
+    }
+
     render() {
         return (
             <div class="form-container">
@@ -18,7 +42,7 @@ export default class Register extends React.Component {
                             <label for="username">Username</label>
                         </div>
                         <div>
-                            <input type="text" class="form-input" id="username"/>
+                            <input type="text" class="form-input" id="username" name="username" value={this.state.username} onChange={this.handleChange}/>
                         </div>
                     </div>
                     <div id="password-section" class="row-custom">
@@ -26,7 +50,7 @@ export default class Register extends React.Component {
                             <label for="password">Password</label>
                         </div>
                         <div>
-                            <input type="password" class="form-input" id="password"/>
+                            <input type="password" class="form-input" id="password" name="password" value={this.state.password} onChange={this.handleChange}/>
                         </div>
                     </div>
                     <div id="name-section" class="row-custom">
@@ -35,7 +59,7 @@ export default class Register extends React.Component {
                                 <label for="first-name">First name</label>
                             </div>
                             <div>
-                                <input type="text" class="form-input" id="first-name"/>
+                                <input type="text" class="form-input" id="first-name" name="firstName" value={this.state.firstName} onChange={this.handleChange}/>
                             </div>
                         </div>
                         <div id="last-name-section" class="row-custom" class="col">
@@ -43,7 +67,7 @@ export default class Register extends React.Component {
                                 <label for="last-name">Last name</label>
                             </div>
                             <div>
-                                <input type="text" class="form-input" id="last-name"/>
+                                <input type="text" class="form-input" id="last-name" name="lastName" value={this.state.lastName} onChange={this.handleChange}/>
                             </div>
                         </div>
                     </div>
@@ -52,7 +76,7 @@ export default class Register extends React.Component {
                             <label for="email">Email address</label>
                         </div>
                         <div>
-                            <input type="text" class="form-input" id="email"/>
+                            <input type="text" class="form-input" id="email" name="email" value={this.state.email} onChange={this.handleChange}/>
                         </div>
                     </div>
 
@@ -62,15 +86,15 @@ export default class Register extends React.Component {
                         <div class="check-box-custom">
                             <label class="check-label" for="term-condition">
                                 I agree to the terms and conditions
-                                <input type="checkbox" id="term-condition"/>
+                                <input type="checkbox" id="term-condition" name="agreeTerms" value={this.state.agreeTerms} onChange={this.handleChange}/>
                                 <span class="checkmark"></span>
                             </label>
 
                         </div>
                         <div class="check-box-custom">
-                            <label class="check-label" for="email-updates">
+                            <label class="check-label" for="receive-updates">
                                 Receive email updates from TenderMate
-                                <input type="checkbox" id="email-updates"/>
+                                <input type="checkbox" id="receive-updates" name="receiveUpdates" value={this.state.receiveUpdates} onChange={this.handleChange}/>
                                 <span class="checkmark"></span>
                             </label>
 
