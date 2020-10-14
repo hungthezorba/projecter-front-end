@@ -1,0 +1,114 @@
+:root {
+    --white-color: #fff;
+    --dark-blue: #254255;
+}  
+
+.flexbox {
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.25rem;
+    background-color: #254255;
+    overflow: hidden;
+    height: 100px;
+    width: 100%;
+}
+
+/* Flex-box container */
+.flexbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+}
+
+@media (max-width: 600px) {
+    .flexbox {
+        flex-direction: column;
+        height: 100%;
+    }
+    .flexbox-left {
+        flex-direction: column;
+        height: 100%;
+        padding: 0;
+    }
+    .flexbox-right {
+        flex-direction: column;
+        height: 100%;
+    }
+    .topNav {
+        flex: 1 0 100%;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+    }
+
+
+}
+
+.flexbox-left {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+}
+
+.flexbox-right {
+    display: flex;
+    align-items: center;
+}
+
+
+.topNav {
+    list-style-type: none;
+    display: flex;
+}
+
+
+
+
+
+.navtags {
+    color: #fff;
+    position: relative;
+    text-decoration: none;
+    margin: 2rem;
+}
+
+
+
+
+/* Css for navtags on hover */
+.navtags:hover::before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    right: 0px;
+    bottom: -3px;
+    left: 0px;
+    background-color: var(--white-color);
+}
+
+
+/* Css for logo Tendermate */
+.navtags-logo {
+    color: #fff;
+    position: relative;
+    text-decoration: none;
+}
+
+.selected::before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    right: 0px;
+    bottom: -3px;
+    left: 0px;
+    background-color: var(--white-color);
+}
+
+@keyframes line {
+    from {}
+}
+
