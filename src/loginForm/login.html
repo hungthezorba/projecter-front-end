@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<style>
+
+    html {
+        font-size: 100%;
+        background-color: #6096BA;
+    }
+
+    .form-container {
+        max-width: 500px;
+        margin: 0 20px;
+    }
+
+    .form {
+        font-family: 'Quicksand', sans-serif;
+        background-color: #F8F8F8;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        padding: 10px 35px 20px 35px;
+    }
+
+    #heading {
+        font-size: 2.5em;
+    }
+
+    .form-input {
+        border: 1px solid #000000;
+        box-sizing: border-box;
+        border-radius: 10px;
+        width: 100%;
+        padding: 18px;
+        resize: vertical;
+    }
+
+    .form-row {
+        padding-bottom: 24px;
+    }
+
+    .form-label {
+        padding-bottom: 12px;
+        font-size: 1.25em;
+    }
+
+    .options-section {
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 5px 0px 5px;
+    }
+
+    .form-footer #submit-section {
+        text-align: center;
+        padding-top: 15px;
+        padding-bottom: 20px;
+    }
+
+    input[type=submit] {
+        background-color: #6096BA;
+        border-color: #6096BA;
+        border-radius: 10px;
+        padding: 15px 35px 15px 35px; 
+        color: #F8F8F8;
+        border-style: none;
+        font-size: 1.25em;
+        font-weight: 700;
+        font-family: 'Quicksand', sans-serif;
+    }
+
+    @media screen and (max-width: 1127px) {
+        .options-section {
+            flex-direction: column;
+        }
+    }
+</style>
+
+<body>
+    <div class="form-container">
+        <form class="form" id="login-form">
+            <div class="form-header">
+                <div id="heading-container">
+                    <h3 id="heading">Sign in</h3>
+                </div>
+            </div>
+            <div class="form-body">
+                <div id="username-section" class="form-row">
+                    <div class="form-label">
+                        <label for="username">Username</label>
+                    </div>
+                    <div>
+                        <input type="text" class="form-input" id="username">
+                    </div>
+                </div>
+                <div id="password-section" class="form-row">
+                    <div class="form-label">
+                        <label for="password">Password</label>
+                    </div>
+                    <div>
+                        <input type="password" class="form-input" id="password">
+                    </div>
+                </div>
+            </div>
+            <div class="form-footer">
+                <div class="options-section">
+                    <div>
+                        <p>Forgot your password?</p>
+                    </div>
+                    <div>
+                        <p>Sign up</p>
+                    </div>
+                </div>
+                <div id="submit-section">
+                    <div>
+                        <input type="submit" value="Sign in">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
