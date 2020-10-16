@@ -57,6 +57,11 @@
 .flexbox-right {
     display: flex;
     align-items: center;
+    padding-right: 2rem;
+}
+
+.flexbox-right .navtags {
+    margin-right: 10px;
 }
 
 
@@ -74,6 +79,13 @@
     position: relative;
     text-decoration: none;
     margin: 2rem;
+}
+
+.navbtn {
+    background-color: #6096BA;
+    box-sizing: border-box;
+    padding: 16px 36px;
+    border-radius: 10px;
 }
 
 

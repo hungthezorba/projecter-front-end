@@ -34,10 +34,10 @@ function NavigationBar() {
 					</ul>
 				</div>
 				<div className="flexbox-right">
-					<NavLink className="navtags push" activeClassName="selected" to="/signin">
+					<NavLink className="navtags" activeClassName="selected" to="/signin">
 						Sign in
 					</NavLink>
-					<NavLink className="navtags push" activeClassName="selected" to="/signup">
+					<NavLink className="navtags navbtn" activeClassName="selected" to="/signup">
 						Sign up
 					</NavLink>
 				</div>
