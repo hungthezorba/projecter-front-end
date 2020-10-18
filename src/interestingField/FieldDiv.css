@@ -1,0 +1,9 @@
+#grid-field {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    padding: 10px;
+}
+
+.grid-field-item {
+    padding: 20px 5px;
+}

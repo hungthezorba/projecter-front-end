@@ -1,7 +1,8 @@
 .field-button {
     background-color: #6096BA; /* Green */
     color: white;
-    padding: 15px 32px;
+    width: 6.25em;
+    padding: 15px 40px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -16,9 +17,13 @@
     transition-duration: 0.75s;
 }
 
+.field-button:hover {
+    background-color: #254255;
+    border-color: #254255;
+}
+
 .active {
-    background-color: #FFFFFF;
-    border-color: #F8F8F8;
-    color: #6096BA;
+    background-color: #254255;
+    border-color: #254255;
     border-style: solid;
 }
