@@ -5,7 +5,6 @@ import "./NavigationBar.css";
 function NavigationBar() {
 	return (
 		<nav className="flexbox">
-			<BrowserRouter>
 				<div className="flexbox-left">
 					<NavLink className="navtags-logo" activeClassName="logo" exact to="/">
 						TenderMate
@@ -34,14 +33,13 @@ function NavigationBar() {
 					</ul>
 				</div>
 				<div className="flexbox-right">
-					<NavLink className="navtags push" activeClassName="selected" to="/signin">
+					<NavLink className="navtags" activeClassName="selected" to="/signin">
 						Sign in
 					</NavLink>
-					<NavLink className="navtags push" activeClassName="selected" to="/signup">
+					<NavLink className="navbtn" activeClassName="selected-btn" to="/signup">
 						Sign up
 					</NavLink>
 				</div>
-			</BrowserRouter>
 		</nav>
 	);
 }
