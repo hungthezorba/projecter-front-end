@@ -1,0 +1,16 @@
+/* */
+.footer {
+    font-family: Quicksand;
+    font-style: normal;
+    font-size: 1.25rem;
+    font-weight: 400;
+    background-color: #F8F8F8;
+    height: 230px;
+    position: relative;
+    /* margin-top: 636px; */
+}
+
+.footer-link {
+    padding-left: 96px;
+    padding-top: 56px;
+}
