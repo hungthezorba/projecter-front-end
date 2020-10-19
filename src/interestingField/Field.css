@@ -1,0 +1,29 @@
+.field-button {
+    background-color: #6096BA; /* Green */
+    color: white;
+    width: 6.25em;
+    padding: 15px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+    border-style: solid;
+    outline-style: none;
+    cursor: pointer;
+    font-family: 'Quicksand';
+    font-weight: 700;
+    border-color: #6096BA;
+    transition-duration: 0.75s;
+}
+
+.field-button:hover {
+    background-color: #254255;
+    border-color: #254255;
+}
+
+.active {
+    background-color: #254255;
+    border-color: #254255;
+    border-style: solid;
+}
