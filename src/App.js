@@ -7,6 +7,7 @@ import NavigationBar from "./navigation/NavigationBar.js";
 import Footer from "./navigation/Footer.js";
 import eFeatures from "./page/eFeatures.js";
 import eHomePage from "./page/eHomepage.js"
+import Interesting from "./interestingField/Interesting"
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 
 function App() {
@@ -14,9 +15,11 @@ function App() {
 		<BrowserRouter>
 			<div className="App">
 				<div className="wrapper">
+					<NavigationBar></NavigationBar>
 					<Switch>
 						<Route path="/" exact component = {eHomePage}/>
 						<Route path="/features" component = {eFeatures}/>
+						<Route path="/interest" component = {Interesting}/>
 					</Switch>
 				</div>
 			</div>

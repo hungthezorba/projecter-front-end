@@ -4,6 +4,7 @@ import Box from '@material-ui/core/Box'
 import styled from 'styled-components'
 import { useState } from 'react'
 
+
 const InterestingWrapper = styled.div`
     display: flex;
     flex-direction: column;
@@ -54,6 +55,7 @@ const Interesting = () => {
 
     return (
     <InterestingWrapper>
+        
         <div>
             <h2 style={{fontSize: '4.375em', fontFamily: 'Quicksand'}}>Choose your interests</h2>
         </div>
