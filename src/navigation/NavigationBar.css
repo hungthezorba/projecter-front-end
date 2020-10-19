@@ -82,13 +82,23 @@
 }
 
 .navbtn {
+    color: #fff;
+    position: relative;
+    text-decoration: none;
+    margin: 2rem;
     background-color: #6096BA;
     box-sizing: border-box;
     padding: 16px 36px;
     border-radius: 10px;
 }
 
+.navbtn:hover {
+    background-color: #2974a6;
+}
 
+.selected-btn {
+    background-color: #2974a6;
+}
 
 
 /* Css for navtags on hover */
