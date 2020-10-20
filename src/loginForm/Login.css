@@ -10,18 +10,6 @@
     padding-bottom: 20px;
 }
 
-input[type=submit] {
-    background-color: #6096BA;
-    border-color: #6096BA;
-    border-radius: 10px;
-    padding: 15px 35px 15px 35px; 
-    color: #F8F8F8;
-    border-style: none;
-    font-size: 1.25em;
-    font-weight: 700;
-    font-family: 'Quicksand', sans-serif;
-}
-
 @media screen and (max-width: 1127px) {
     .options-section {
         flex-direction: column;

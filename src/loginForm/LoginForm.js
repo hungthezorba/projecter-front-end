@@ -2,7 +2,7 @@ import React from 'react'
 import './Login.css'
 
 
-export default class Login extends React.Component {
+export default class LoginForm extends React.Component {
 
     constructor() {
         super()
@@ -26,7 +26,7 @@ export default class Login extends React.Component {
 
     render() {
         return (
-                <div class="form-container">
+                <div style={{margin: '0 auto', width: '100%'}} class="form-container">
         <form class="form" id="login-form">
             <div class="form-header">
                 <div id="heading-container">
