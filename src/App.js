@@ -9,6 +9,7 @@ import eFeatures from "./page/eFeatures.js";
 import eHomePage from "./page/eHomepage.js"
 import Interesting from "./page/Interesting"
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import ProjectCard from "./projectManage/ProjectCard";
 
 function App() {
 	return (
@@ -22,6 +23,7 @@ function App() {
 						<Route path="/interest" component = {Interesting}/>
 						<Route path="/signup" component = {Register}/>
 						<Route path="/signin" component = {Login}/>
+						<Route path="/project" component = {ProjectCard}/>
 					</Switch>
 				</div>
 			</div>
