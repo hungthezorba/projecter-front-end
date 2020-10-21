@@ -12,15 +12,31 @@ const Content = styled.div`
     @media (max-width: 768px) {
         flex-direction: column;
         width: 80%;
-        margin: auto;
+        margin: 0 auto;
     }
+`
+
+const Info = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 1.25em 3em 1.25em 3em;
+    width: 37%;
+    justify-content: space-between;
+    font-size: 1.25em;
+    font-family: 'Roboto';
+    font-weight: 400;
 `
 
 const Setting = styled.div`
     display: flex;
-
+    position: absolute;
+    top: 30px;
+    right: 25px;
     @media (max-width: 768px) {
         flex-direction: column;
+        position: relative;
+        top: 0;
+        
     }
 `
 
@@ -35,16 +51,16 @@ export default class ProjectCard extends React.Component {
 
     render() {
         return (
-            <Card style={{ minWidth: '100%', width: '80vw', borderRadius: '10px' }}>
+            <Card id="project-card">
                 <Content>
                     <ImageContainer source="https://media.monsterindia.com/cmsimages/1509963788.jpg" />
-                    <div style={{ display: 'flex', flexDirection: 'column', padding: '20px', width: '40%', justifyContent: 'space-between' }}>
+                    <Info>
                         <div>
-                            <Typography component="h5" variant="h4">
+                            <Typography style={{fontFamily: 'Quicksand', fontWeight: '700'}} component="h5" variant="h4">
                                 Ocean Freedom
                             </Typography>
                         </div>
-                        <div>
+                        <div style={{paddingTop: '4px'}}>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center', marginLeft: '10px' }}>
@@ -66,16 +82,16 @@ export default class ProjectCard extends React.Component {
                                 <button className="add-member-button">Add</button>
                             </div>
                         </div>
-                    </div>
-                    <Setting>
+                    </Info>
+                </Content>
+                <Setting>
                         <div className="setting-icon">
-                            <i class="fas fa-eye-slash"></i>
+                            <i style={{color: '#A6A6A6'}} class="fas fa-lg fa-eye-slash"></i>
                         </div>
                         <div className="setting-icon">
-                            <i class="fas fa-cog"></i>
+                            <i style={{color: '#A6A6A6'}} class="fas fa-lg fa-cog"></i>
                         </div>
                     </Setting>
-                </Content>
             </Card>
         )
     }

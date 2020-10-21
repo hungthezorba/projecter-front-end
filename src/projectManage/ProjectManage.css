@@ -1,3 +1,11 @@
+#project-card {
+    min-width: 100%; 
+    width: 80vw;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    position: relative;
+}
+
 .add-member-button {
     background-color: #6096BA;
     border-color: #6096BA;
