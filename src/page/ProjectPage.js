@@ -3,13 +3,16 @@ import ProjectCard from '../projectManage/ProjectCard'
 import styled from 'styled-components'
 import Note from '../projectManage/Note'
 const ProjectManageWrapper = styled.div`
-    padding: 5em;
+    padding: 5em 7em 5em 7em;
 `
 
 const ProjectPage = () => (
     <ProjectManageWrapper>
         <ProjectCard/>
-        <Note/>
+        <div style={{height: 'auto', width: '80vw', padding: '20px', position: 'relative'}}>
+            <Note/>
+            <Note/>
+        </div>
     </ProjectManageWrapper>
 )
 

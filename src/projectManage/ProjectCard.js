@@ -20,7 +20,7 @@ const Info = styled.div`
     display: flex;
     flex-direction: column;
     padding: 1.25em 3em 1.25em 3em;
-    width: 37%;
+    width: 40%;
     justify-content: space-between;
     font-size: 1.25em;
     font-family: 'Roboto';
