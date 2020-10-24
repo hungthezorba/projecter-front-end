@@ -24,18 +24,20 @@
 
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
     .flexbox {
         flex-direction: column;
+        justify-content: center;
         height: 100%;
     }
     .flexbox-left {
         flex-direction: column;
+        justify-content: center;
         height: 100%;
-        padding: 0;
     }
     .flexbox-right {
         flex-direction: column;
+        justify-content: center;
         height: 100%;
     }
     .topNav {
@@ -51,17 +53,17 @@
 .flexbox-left {
     display: flex;
     align-items: center;
-    padding: 2rem;
+    padding-left: 22rem;
 }
 
 .flexbox-right {
     display: flex;
     align-items: center;
-    padding-right: 2rem;
+    padding-right: 20rem;
 }
 
 .flexbox-right .navtags {
-    margin-right: 10px;
+    margin-right: 0.75rem;
 }
 
 
