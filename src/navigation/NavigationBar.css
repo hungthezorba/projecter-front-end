@@ -3,19 +3,25 @@
     --dark-blue: #254255;
 }  
 
-.flexbox {
+.nav-container {
     font-family: Quicksand;
     font-style: normal;
     font-weight: bold;
     font-size: 1.25rem;
     background-color: #254255;
     overflow: hidden;
-    height: 100px;
-    width: 100%;
+    width: 100vw;
+    top: 0;
+    z-index: 100;
 }
 
+
 /* Flex-box container */
-.flexbox {
+.flexbox { 
+    width: 1128px;
+    align-items: center;
+    margin: 0 auto;
+    min-height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -46,20 +52,17 @@
         justify-content: center;
         height: 100%;
     }
-
-
 }
 
 .flexbox-left {
     display: flex;
     align-items: center;
-    padding-left: 22rem;
+
 }
 
 .flexbox-right {
     display: flex;
     align-items: center;
-    padding-right: 20rem;
 }
 
 .flexbox-right .navtags {
