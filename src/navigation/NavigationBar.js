@@ -4,7 +4,8 @@ import "./NavigationBar.css";
 
 function NavigationBar() {
 	return (
-		<nav className="flexbox">
+		<div className="nav-container">
+			<nav className="flexbox">
 				<div className="flexbox-left">
 					<NavLink className="navtags-logo" activeClassName="logo" exact to="/">
 						TenderMate
@@ -40,7 +41,8 @@ function NavigationBar() {
 						Sign up
 					</NavLink>
 				</div>
-		</nav>
+			</nav>
+		</div>
 	);
 }
 
