@@ -3,19 +3,25 @@
     --dark-blue: #254255;
 }  
 
-.flexbox {
+.nav-container {
     font-family: Quicksand;
     font-style: normal;
     font-weight: bold;
     font-size: 1.25rem;
     background-color: #254255;
     overflow: hidden;
-    height: 100px;
-    width: 100%;
+    width: 100vw;
+    top: 0;
+    z-index: 100;
 }
 
+
 /* Flex-box container */
-.flexbox {
+.flexbox { 
+    width: 1128px;
+    align-items: center;
+    margin: 0 auto;
+    min-height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -24,18 +30,20 @@
 
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1024px) {
     .flexbox {
         flex-direction: column;
+        justify-content: center;
         height: 100%;
     }
     .flexbox-left {
         flex-direction: column;
+        justify-content: center;
         height: 100%;
-        padding: 0;
     }
     .flexbox-right {
         flex-direction: column;
+        justify-content: center;
         height: 100%;
     }
     .topNav {
@@ -44,24 +52,21 @@
         justify-content: center;
         height: 100%;
     }
-
-
 }
 
 .flexbox-left {
     display: flex;
     align-items: center;
-    padding: 2rem;
+
 }
 
 .flexbox-right {
     display: flex;
     align-items: center;
-    padding-right: 2rem;
 }
 
 .flexbox-right .navtags {
-    margin-right: 10px;
+    margin-right: 0.75rem;
 }
 
 
@@ -78,14 +83,14 @@
     color: #fff;
     position: relative;
     text-decoration: none;
-    margin: 2rem;
+    margin: 1.7rem;
 }
 
 .navbtn {
     color: #fff;
     position: relative;
     text-decoration: none;
-    margin: 2rem;
+    margin: 1.5rem;
     background-color: #6096BA;
     box-sizing: border-box;
     padding: 16px 36px;
