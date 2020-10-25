@@ -30,7 +30,7 @@
 
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
     .flexbox {
         flex-direction: column;
         justify-content: center;
@@ -83,14 +83,14 @@
     color: #fff;
     position: relative;
     text-decoration: none;
-    margin: 2rem;
+    margin: 1.7rem;
 }
 
 .navbtn {
     color: #fff;
     position: relative;
     text-decoration: none;
-    margin: 2rem;
+    margin: 1.5rem;
     background-color: #6096BA;
     box-sizing: border-box;
     padding: 16px 36px;
