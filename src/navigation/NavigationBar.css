@@ -18,7 +18,9 @@
 
 /* Flex-box container */
 .flexbox { 
-    width: 1128px;
+    max-width: 1128px;
+    margin-right: auto;
+	margin-left: auto;
     align-items: center;
     margin: 0 auto;
     min-height: 100%;
