@@ -11,7 +11,23 @@ export default class ProjectPage extends React.Component {
     constructor() {
         super()
         this.state = {
-            notes: [
+            name: 'Ocean Freedom',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            member : [
+                {
+                    id: '1',
+                    username: 'hungthezorba'
+                },
+                {
+                    id: '2',
+                    username: 'polackbeeves'
+                },
+                {
+                    id: '3',
+                    username: 'callMeDKay'
+                }
+            ],
+            note: [
                 {
                     id: '1',
                     title: 'Protect the fish!',
@@ -39,9 +55,9 @@ export default class ProjectPage extends React.Component {
     render() {
         return (
             <ProjectManageWrapper>
-                <ProjectCard />
+                <ProjectCard name={this.state.name} description={this.state.description} member={this.state.member} />
                 <div style={{ height: 'auto', width: '100%', margin: '25px auto', position: 'relative' }}>
-                    {this.state.notes.map(note => (
+                    {this.state.note.map(note => (
                         <Note data={note} />
                     ))}
                 </div>
