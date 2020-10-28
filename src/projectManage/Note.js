@@ -6,11 +6,28 @@ export default class Note extends React.Component {
 
     constructor(props) {
         super(props)
+        this.state = {
+            deltaPosition: {
+                x: this.props.data.x,
+                y: this.props.data.y
+            }
+        }
+    }
+
+    handleDrag = (e, ui) => {
+        const {x, y} = this.props.data;
+        this.setState({
+            deltaPosition: {
+                x: x + ui.deltaX,
+                y: y + ui.deltaY
+            },    
+        })
+        this.props.handler(this.props.data.id, this.state.deltaPosition.x, this.state.deltaPosition.y)
     }
 
     render() {
         return (
-            <Draggable bounds="parent">
+            <Draggable defaultPosition={{x: this.state.deltaPosition.x, y: this.state.deltaPosition.y}} onStop={ (e) => console.log(e)} onDrag={this.handleDrag} bounds="parent">
                 <div style={{marginTop: '25px', fontFamily: 'Quicksand', maxWidth: '500px', backgroundColor: '#F8F8F8', padding: '15px 35px 15px 35px', borderRadius: '10px' }}>
                     <div>
                         <h1 style={{ fontSize: '2.5em' }}>{this.props.data.title}</h1>
