@@ -13,6 +13,7 @@
     width: 100vw;
     top: 0;
     z-index: 100;
+    position: relative;
 }
 
 
@@ -48,11 +49,21 @@
         justify-content: center;
         height: 100%;
     }
+
+    .navtags-logo {
+        margin-top: 10px;
+    }
+
     .topNav {
         flex: 1 0 100%;
         flex-direction: column;
         justify-content: center;
         height: 100%;
+        margin-left: 0rem !important;
+        text-align: center;
+    }
+    .topNav li {
+        margin: 5px 0 !important;
     }
 }
 
@@ -69,18 +80,22 @@
 
 .flexbox-right .navtags {
     margin-right: 0.75rem;
+    color: white;
+    text-decoration: none;
 }
 
 .topNav {
     list-style-type: none;
+    padding: 0;
     display: flex;
+    margin-left: 3rem;
 }
 
-.navtags {
+li .navtags {
     color: #fff;
     position: relative;
     text-decoration: none;
-    margin: 1.7rem;
+    margin: 1rem;
 }
 
 .navbtn {

@@ -57,26 +57,20 @@ export default class ProjectCard extends React.Component {
                     <Info>
                         <div>
                             <Typography style={{fontFamily: 'Quicksand', fontWeight: '700'}} component="h5" variant="h4">
-                                Ocean Freedom
+                                {this.props.name}
                             </Typography>
                         </div>
                         <div style={{paddingTop: '4px'}}>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <p>{this.props.description}</p>
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center', marginLeft: '10px' }}>
                             <div style={{ display: 'flex' }}>
-                                <div>
-                                    <img style={{ borderRadius: '50%', width: '50px' }} src="https://www.w3schools.com/howto/img_avatar.png" />
-                                </div>
-                                <div>
-                                    <img style={{ borderRadius: '50%', width: '50px' }} src="https://www.w3schools.com/howto/img_avatar.png" />
-                                </div>
-                                <div>
-                                    <img style={{ borderRadius: '50%', width: '50px' }} src="https://www.w3schools.com/howto/img_avatar.png" />
-                                </div>
-                                <div>
-                                    <img style={{ borderRadius: '50%', width: '50px' }} src="https://www.w3schools.com/howto/img_avatar.png" />
-                                </div>
+                                {this.props.member.map(m => (
+                                    <div>
+                                        <img style={{ borderRadius: '50%', width: '50px' }} src={m.imageUrl} />
+                                    </div>
+                                ))}
+                                
                             </div>
                             <div style={{ padding: '0 20px' }}>
                                 <button className="add-member-button">Add</button>
