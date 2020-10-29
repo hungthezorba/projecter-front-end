@@ -27,7 +27,7 @@ export default class Note extends React.Component {
 
     render() {
         return (
-            <Draggable defaultPosition={{x: this.state.deltaPosition.x, y: this.state.deltaPosition.y}} onStop={ (e) => console.log(e)} onDrag={this.handleDrag} bounds="parent">
+            <Draggable defaultPosition={{x: this.state.deltaPosition.x, y: this.state.deltaPosition.y}} onStop={this.props.onStop} onDrag={this.handleDrag} bounds="parent">
                 <div style={{marginTop: '25px', fontFamily: 'Quicksand', maxWidth: '500px', backgroundColor: '#F8F8F8', padding: '15px 35px 15px 35px', borderRadius: '10px' }}>
                     <div>
                         <h1 style={{ fontSize: '2em' }}>{this.props.data.title}</h1>
