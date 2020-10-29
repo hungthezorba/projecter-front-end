@@ -11,47 +11,10 @@ export default class ProjectPage extends React.Component {
     constructor() {
         super()
         this.state = {
-            name: 'Ocean Freedom',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-            member : [
-                {
-                    id: '1',
-                    username: 'hungthezorba',
-                    imageUrl: 'https://www.w3schools.com/howto/img_avatar.png'
-                },
-                {
-                    id: '2',
-                    username: 'polackbeeves',
-                    imageUrl: 'https://www.w3schools.com/howto/img_avatar.png'
-                },
-                {
-                    id: '3',
-                    username: 'callMeDKay',
-                    imageUrl: 'https://www.w3schools.com/howto/img_avatar.png'
-                }
-            ],
-            note: [
-                {
-                    id: '1',
-                    title: 'Protect the fish!',
-                    items: [
-                        { id: '1', content: 'hello', date: '18/09/2020', done: false },
-                        { id: '2', content: 'world', date: '15/10/2020', done: false }
-                    ],
-                    x: 170,
-                    y: 147
-                },
-                {
-                    id: '2',
-                    title: 'Search the warehouse',
-                    items: [
-                        { id: '3', content: 'hello', date: '18/09/2020', done: false },
-                        { id: '4', content: 'world', date: '12/10/2020', done: true }
-                    ],
-                    x: 511,
-                    y: -16
-                }
-            ]
+            name: '',
+            description: '',
+            member : [],
+            note: []
         }
         this.handler = this.handler.bind(this)
     }
@@ -65,7 +28,23 @@ export default class ProjectPage extends React.Component {
                 }) : obj)
             )
         }))
-        console.log(this.state.note)
+    }
+
+    componentDidMount() {
+        this.fetchData()
+    }
+
+    fetchData() {
+        fetch("https://5f8e813f4c15c40016a1ebc0.mockapi.io/api/v1/projects/9")
+        .then(res => res.json())
+        .then(
+            (result) => {
+                this.setState(result)
+            },
+            (error) => {
+                console.log(error)
+            }
+        )
     }
 
     render() {

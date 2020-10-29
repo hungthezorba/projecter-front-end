@@ -22,7 +22,7 @@ const Info = styled.div`
     padding: 1.25em 3em 1.25em 3em;
     width: 40%;
     justify-content: space-between;
-    font-size: 1.25em;
+    font-size: 1em;
     font-family: 'Roboto';
     font-weight: 400;
 `
