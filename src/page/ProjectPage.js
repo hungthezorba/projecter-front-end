@@ -2,9 +2,10 @@ import React from 'react'
 import ProjectCard from '../projectManage/ProjectCard'
 import styled from 'styled-components'
 import Note from '../projectManage/Note'
+import {Wrapper}  from "../StyledComponents/StyledComponents.js";
 
 const ProjectManageWrapper = styled.div`
-    padding: 5em 7em 5em 7em;
+    padding: 5rem 0rem;
 `
 
 export default class ProjectPage extends React.Component {
@@ -49,14 +50,16 @@ export default class ProjectPage extends React.Component {
 
     render() {
         return (
-            <ProjectManageWrapper>
-                <ProjectCard name={this.state.name} description={this.state.description} member={this.state.member} />
-                <div style={{ height: 'auto', width: '100%', margin: '25px auto', position: 'relative' }}>
-                    {this.state.note.map(note => (
-                        <Note handler={this.handler} data={note} />
-                    ))}
-                </div>
-            </ProjectManageWrapper>
+            <Wrapper>
+                <ProjectManageWrapper>
+                    <ProjectCard name={this.state.name} description={this.state.description} member={this.state.member} />
+                    <div style={{ height: 'auto', width: '100%', margin: '25px auto', position: 'relative' }}>
+                        {this.state.note.map(note => (
+                            <Note handler={this.handler} data={note} />
+                        ))}
+                    </div>
+                </ProjectManageWrapper>
+            </Wrapper>
         )
     }
 }
