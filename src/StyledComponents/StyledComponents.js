@@ -6,6 +6,13 @@ export const Wrapper = styled.div`
 	max-width: 1024px;
 	padding-right: 10px;
 	padding-left: 10px;
+
+	@media (device-aspect-ratio: 16/10) {
+		max-width: 80%;
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+
 `;
 
 export const CustomCmdButton = styled.button`
