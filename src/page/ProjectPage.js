@@ -29,25 +29,29 @@ export default class ProjectPage extends React.Component {
                 }) : obj)
             ),
         }))
-        
-        
     }
     updateNote() {
-        fetch("https://5f8e813f4c15c40016a1ebc0.mockapi.io/api/v1/projects/9", {
+        console.log(this.state.note)
+        fetch("https://5f8e813f4c15c40016a1ebc0.mockapi.io/api/v1/projects/8", {
                     method: 'PUT',
                     headers: {
-                        "content" : "application/json",
-                        "accept-type" : "application/json"
+                        "Content-Type" : "application/json",
+                        "Accept" : "application/json"
                     },
                     body : JSON.stringify({
                         note: this.state.note
                     })
                 })
-                .then(res => console.log(res.json()))
+                .then(res => res.json())
                 .then(
                     (data) => {
                         this.setState(data)
-                    })
+                        console.log(data)
+                    },
+                    (error) => {
+                        console.log(error)
+                    }
+                    )
     }
 
     componentDidMount() {
@@ -55,7 +59,7 @@ export default class ProjectPage extends React.Component {
     }
 
     fetchData() {
-        fetch("https://5f8e813f4c15c40016a1ebc0.mockapi.io/api/v1/projects/9")
+        fetch("https://5f8e813f4c15c40016a1ebc0.mockapi.io/api/v1/projects/8")
         .then(res => res.json())
         .then(
             (result) => {
