@@ -32,7 +32,7 @@ const UserCardContentLeft = styled.div`
 const Avatar = styled.img`
 	width: 100%;
 	max-width: 22rem;
-	height: 22rem;
+	max-height: 22rem;
 	border-radius: ${props => props.isRound ? "50%" : "0"};
 `;
 

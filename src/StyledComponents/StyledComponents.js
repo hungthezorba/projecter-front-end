@@ -55,3 +55,6 @@ export const CustomBadgeButton = styled.button`
 	}
 `;
 
+export const CustomBadgeIcon = styled.img`
+	
+`
