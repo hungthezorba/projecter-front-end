@@ -13,7 +13,6 @@ export default class eFeatures extends React.Component {
 	render() {
 		return (
 			<div>
-				<NavigationBar></NavigationBar>
 				<div className="main-content">Features loading 99%</div>
 				<Footer></Footer>
 			</div>
