@@ -1,7 +1,7 @@
 import React from 'react'
 import './Register.css'
 
-export default class Register extends React.Component {
+export default class RegisterForm extends React.Component {
 
     constructor() {
         super()
@@ -15,6 +15,7 @@ export default class Register extends React.Component {
             receiveUpdates: false,
         }
         this.handleChange = this.handleChange.bind(this)
+        this.submit = this.submit.bind(this)
     }
 
     handleChange(e) {
@@ -27,9 +28,13 @@ export default class Register extends React.Component {
         })
     }
 
+    submit(e) {
+        e.preventDefault();
+    }
+
     render() {
         return (
-            <div class="form-container">
+            <div style={{margin: '0 auto', width: '100%'}} class="form-container">
             <form class="form" id="login-form">
                 <div class="form-header">
                     <div id="heading-container">
@@ -102,7 +107,7 @@ export default class Register extends React.Component {
                     </div>
                     <div id="submit-section">
                         <div>
-                            <input type="submit" value="Sign up"/>
+                            <input className={this.state.agreeTerms ? '' : 'cancel-button'} type="submit" onClick={this.submit} value="Sign up"/>
                         </div>
                     </div>
                 </div>

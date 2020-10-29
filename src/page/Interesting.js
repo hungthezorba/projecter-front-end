@@ -1,5 +1,5 @@
 import React from 'react'
-import FieldDiv from './FieldDiv'
+import FieldDiv from '../interestingField/FieldDiv'
 import Box from '@material-ui/core/Box'
 import styled from 'styled-components'
 import { useState } from 'react'
@@ -55,7 +55,6 @@ const Interesting = () => {
 
     return (
     <InterestingWrapper>
-        
         <div>
             <h2 style={{fontSize: '4.375em', fontFamily: 'Quicksand'}}>Choose your interests</h2>
         </div>

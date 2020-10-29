@@ -1,0 +1,43 @@
+#project-card {
+    min-width: 100%; 
+    width: 80vw;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    position: relative;
+}
+
+.add-member-button {
+    background-color: #6096BA;
+    border-color: #6096BA;
+    border-radius: 10px;
+    padding: 15px;
+    color: #F8F8F8;
+    border-style: none;
+    font-size: 1.25em;
+    font-weight: 700;
+    font-family: 'Quicksand', sans-serif;
+    outline-style: none;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.setting-icon {
+    margin-left: '10px';
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 10px 0 10px;
+}
+
+.setting-icon i {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 748px) {
+    .setting-icon {
+        background-color: #6096BA;
+        padding: 10px;
+        color: white;
+    }
+
+}
