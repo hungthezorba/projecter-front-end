@@ -12,7 +12,7 @@ export const CustomCmdButton = styled.button`
 	color: #fff;
 	position: relative;
 	font-family: Quicksand;
-	font-size: 20px;
+	font-size: 1em;
 	font-weight: bold;
 	text-decoration: none;
 	background-color: #6096ba;
@@ -31,7 +31,7 @@ export const CustomBadgeButton = styled.button`
 	color: #fff;
 	position: relative;
 	font-family: Quicksand;
-	font-size: 20px;
+	font-size: 1em;
 	font-weight: bold;
 	text-decoration: none;
 	background-color: ${(props) => props.bgColor ? props.bgColor : '#6096ba'};
@@ -41,5 +41,10 @@ export const CustomBadgeButton = styled.button`
 	padding: 12px 12px;
 	border-radius: 10px;
 	margin-left: ${(props) => (props.ml ? props.ml + "rem" : 0)};
+	user-select: none;
+	&:focus{
+		outline: none;
+		box-shadow: none;
+	}
 `;
 
