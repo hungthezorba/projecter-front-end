@@ -14,7 +14,8 @@ export default class ProjectPage extends React.Component {
             name: '',
             description: '',
             member : [],
-            note: []
+            note: [],
+            imageUrl: ''
         }
         this.handler = this.handler.bind(this)
         this.updateNote = this.updateNote.bind(this)
@@ -74,7 +75,7 @@ export default class ProjectPage extends React.Component {
     render() {
         return (
             <ProjectManageWrapper>
-                <ProjectCard name={this.state.name} description={this.state.description} member={this.state.member} />
+                <ProjectCard name={this.state.name} description={this.state.description} member={this.state.member} imageUrl={this.state.imageUrl} />
                 <div style={{ height: 'auto', width: '100%', margin: '25px auto', position: 'relative' }}>
                     {this.state.note.map(note => (
                         <Note onStop={this.updateNote} handler={this.handler} data={note} />

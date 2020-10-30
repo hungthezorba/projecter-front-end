@@ -53,7 +53,7 @@ export default class ProjectCard extends React.Component {
         return (
             <Card id="project-card">
                 <Content>
-                    <ImageContainer source="https://media.monsterindia.com/cmsimages/1509963788.jpg" />
+                    <ImageContainer source={this.props.imageUrl} />
                     <Info>
                         <div>
                             <Typography style={{fontFamily: 'Quicksand', fontWeight: '700'}} component="h5" variant="h4">
