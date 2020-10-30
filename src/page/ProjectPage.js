@@ -17,11 +17,12 @@ export default class ProjectPage extends React.Component {
             note: [],
             imageUrl: ''
         }
-        this.handler = this.handler.bind(this)
+        this.noteCoordinateHandler = this.noteCoordinateHandler.bind(this)
+        this.noteColorHandler = this.noteColorHandler.bind(this)
         this.updateNote = this.updateNote.bind(this)
     }
 
-    handler(id, x, y) {
+    noteCoordinateHandler(id, x, y) {
         this.setState( prevState => ({
             note: prevState.note.map(
                 obj => (obj.id === id ? Object.assign(obj, {
@@ -31,8 +32,18 @@ export default class ProjectPage extends React.Component {
             ),
         }))
     }
+
+    noteColorHandler(id, color) {
+        this.setState( prevState => ({
+            note: prevState.note.map(
+                obj => (obj.id === id ? Object.assign(obj, {
+                    backgroundColor: color
+                }) : obj)
+            )
+        }))
+    }
+
     updateNote() {
-        console.log(this.state.note)
         fetch("https://5f8e813f4c15c40016a1ebc0.mockapi.io/api/v1/projects/8", {
                     method: 'PUT',
                     headers: {
@@ -78,7 +89,7 @@ export default class ProjectPage extends React.Component {
                 <ProjectCard name={this.state.name} description={this.state.description} member={this.state.member} imageUrl={this.state.imageUrl} />
                 <div style={{ height: 'auto', width: '100%', margin: '25px auto', position: 'relative' }}>
                     {this.state.note.map(note => (
-                        <Note onStop={this.updateNote} handler={this.handler} data={note} />
+                        <Note noteColorHandler={this.noteColorHandler} onStop={this.updateNote} noteCoordinateHandler={this.noteCoordinateHandler} data={note} />
                     ))}
                 </div>
             </ProjectManageWrapper>

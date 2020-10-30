@@ -11,7 +11,8 @@ export default class Note extends React.Component {
             deltaPosition: {
                 x: this.props.data.x,
                 y: this.props.data.y
-            }
+            },
+            color: this.props.backgroundColor
         }
     }
 
@@ -23,17 +24,34 @@ export default class Note extends React.Component {
                 y: y + ui.deltaY
             },
         })
-        this.props.handler(this.props.data.id, this.state.deltaPosition.x, this.state.deltaPosition.y)
+        this.props.noteCoordinateHandler(this.props.data.id, this.state.deltaPosition.x, this.state.deltaPosition.y)
+    }
+
+    handleColorChange = (e) => {
+        const target = e.target
+        const value = target.value
+        const name = target.name
+        this.setState({
+            [name] : value
+        })
+        this.props.noteColorHandler(this.props.data.id, this.state.color)
     }
 
     render() {
         return (
             <Draggable defaultPosition={{ x: this.state.deltaPosition.x, y: this.state.deltaPosition.y }} onStop={this.props.onStop} onDrag={this.handleDrag} bounds="parent">
-                <div style={{ marginTop: '25px', fontFamily: 'Quicksand', maxWidth: '500px', backgroundColor: '#F8F8F8', padding: '15px 35px 15px 35px', borderRadius: '10px' }}>
+                <div style={{ marginTop: '25px', fontFamily: 'Quicksand', maxWidth: '500px', backgroundColor: this.props.data.backgroundColor, padding: '15px 35px 15px 35px', borderRadius: '10px' }}>
                     {this.props.data.items ?
                         <div>
                             <div>
-                                <h1 style={{ fontSize: '2em' }}>{this.props.data.title}</h1>
+                                <div>
+                                    <h1 style={{ fontSize: '2em' }}>{this.props.data.title}</h1>
+                                </div>
+                                <div>
+                                    <label style={{backgroundColor: this.state.backgroundColor}} className="color-picker" for="head">
+                                        <input onClose={this.props.onStop} onChange={this.handleColorChange} value={this.state.backgroundColor} type="color" name="color"/>
+                                    </label>
+                                </div>
                             </div>
                             <div style={{ display: 'flex', flexDirection: 'column' }}>
                                 {this.props.data.items.map(item => (
