@@ -4,6 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import styled from 'styled-components'
 import Box from '@material-ui/core/Box'
 import './ProjectManage.css'
+import Skeleton from 'react-loading-skeleton'
 
 const Content = styled.div`
     display: flex;
@@ -22,7 +23,7 @@ const Info = styled.div`
     padding: 1.25em 3em 1.25em 3em;
     width: 40%;
     justify-content: space-between;
-    font-size: 1.25em;
+    font-size: 1em;
     font-family: 'Roboto';
     font-weight: 400;
 `
@@ -53,15 +54,19 @@ export default class ProjectCard extends React.Component {
         return (
             <Card id="project-card">
                 <Content>
-                    <ImageContainer source="https://media.monsterindia.com/cmsimages/1509963788.jpg" />
+                    {this.props.imageUrl ? 
+                    <ImageContainer source={this.props.imageUrl}/>
+                     :
+                         <Skeleton height={200} width={200} />
+                }
                     <Info>
                         <div>
                             <Typography style={{fontFamily: 'Quicksand', fontWeight: '700'}} component="h5" variant="h4">
-                                {this.props.name}
+                                {this.props.name || <Skeleton/>}
                             </Typography>
                         </div>
                         <div style={{paddingTop: '4px'}}>
-                            <p>{this.props.description}</p>
+                            <p>{this.props.description || <Skeleton count={4} duration={2}/>}</p>
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center', marginLeft: '10px' }}>
                             <div style={{ display: 'flex' }}>
