@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from "react";
 import styled, { css } from "styled-components";
-import {CustomCmdButton, CustomBadgeButton} from '../StyledComponents/StyledComponents';
-
+import {
+	CustomCmdButton,
+	CustomBadgeIcon,
+	ToolTipBox,
+	ToolTipCard,
+	ToolTipContent,
+} from "../StyledComponents/StyledComponents";
+import MsgModal from "./MsgModal.js";
+import InviteDialog from "./InviteDialog";
 
 const UserCardGrid = styled.div`
-    font-family: Quicksand;
-    font-style: normal;
+	font-family: Quicksand;
+	font-style: normal;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	display: grid;
 	transition: 0.3s;
@@ -14,8 +21,8 @@ const UserCardGrid = styled.div`
 	min-height: 26rem;
 	height: auto;
 	background-color: #f8f8f8;
-    border-radius: 10px;
-    width: 100%;
+	border-radius: 10px;
+	width: 100%;
 	grid-template-columns: [avt-col-start] 2fr [avt-col-end content-col-start] 3fr [content-col-end];
 	grid-template-rows: [avt-row-start] 1fr;
 	grid-column-start: col1-start;
@@ -32,13 +39,13 @@ const UserCardContentLeft = styled.div`
 const Avatar = styled.img`
 	width: 100%;
 	max-width: 22rem;
-	height: 22rem;
-	border-radius: ${props => props.isRound ? "50%" : "0"};
+	max-height: 22rem;
+	border-radius: ${(props) => (props.isRound ? "50%" : "0")};
 `;
 
 const UserCardContentRight = styled.div`
 	width: auto;
-	padding-top: 5rem;
+	padding-top: 4.5rem;
 	padding-left: 2rem;
 	padding-right: 4rem;
 	grid-column: content-col-start / content-col-end;
@@ -53,7 +60,7 @@ const NameSection = styled.div`
 	grid-row: 1 / 2;
 	font-weight: bold;
 	font-size: 2.5rem;
-`
+`;
 
 const BioSection = styled.div`
 	grid-column: 1 / 3;
@@ -63,21 +70,29 @@ const BioSection = styled.div`
 const LegendSection = styled.div`
 	grid-column: 1 / 2;
 	grid-row: 2 / 3;
-    p {
-		color: #A6A6A6;
+	p {
+		color: #a6a6a6;
 		margin: 0px;
-    }
-`
+	}
+`;
 const BadgeSection = styled.div`
 	grid-column: 1 / 3;
 	grid-row: 4 / 5;
-	padding-top: 3rem;
-`
-const CommandSection = styled.div`
-
-`
+	padding-top: 2rem;
+`;
+const CommandSection = styled.div``;
 
 const UserCard = (props) => {
+	const [openDialog, setOpenDialog] = React.useState(false);
+
+	const handleClickOpen = () => {
+		setOpenDialog(true);
+	};
+
+	const handleClose = () => {
+		setOpenDialog(false);
+	};
+
 	return (
 		<UserCardGrid>
 			<UserCardContentLeft>
@@ -87,23 +102,49 @@ const UserCard = (props) => {
 				<NameSection>Kha Bui</NameSection>
 				<CommandSection>
 					<CustomCmdButton>Follow</CustomCmdButton>
-					<CustomCmdButton ml={0.6}>Invite</CustomCmdButton>
+					<CustomCmdButton onClick={handleClickOpen} ml={0.6}>Invite</CustomCmdButton>
 					<CustomCmdButton ml={0.6}>Message</CustomCmdButton>
 				</CommandSection>
 				<LegendSection>
 					<p>@username 91 followers</p>
 				</LegendSection>
 				<BioSection>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-					ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					I am a hardworking and ambitious individual with a great passion for the business
+					industry. I am currently in my second year of studying International Business at
+					University of Economics Ho Chi Minh City. I have excellent communication skills, enabling
+					me to effectively communicate with a wide range of people.
 				</BioSection>
 				<BadgeSection>
-					<CustomBadgeButton bgColor="#72BA60">5 year veteran</CustomBadgeButton>
-					<CustomBadgeButton bgColor="#80214F" ml={0.6}>Cold hands warm heart</CustomBadgeButton>
-					<CustomBadgeButton bgColor="#2C7158" ml={0.6}>Hail Hydra!</CustomBadgeButton>
+					<ToolTipCard>
+						<ToolTipContent>
+							<CustomBadgeIcon
+								src="https://cdn.iconscout.com/icon/free/png-64/badge-1486567-1257080.png"
+								alt="badge"
+							/>
+						</ToolTipContent>
+						<ToolTipBox>5 year veteran</ToolTipBox>
+					</ToolTipCard>
+					<ToolTipCard>
+						<ToolTipContent>
+							<CustomBadgeIcon
+								src="https://cdn.iconscout.com/icon/free/png-64/medal-38-124197.png"
+								alt="badge"
+							/>
+						</ToolTipContent>
+						<ToolTipBox>Gold contributors 2020</ToolTipBox>
+					</ToolTipCard>
+					<ToolTipCard>
+						<ToolTipContent>
+							<CustomBadgeIcon
+								src="https://cdn.iconscout.com/icon/premium/png-64-thumb/medal-2058355-1731971.png"
+								alt="badge"
+							/>
+						</ToolTipContent>
+						<ToolTipBox>Most-time leader</ToolTipBox>
+					</ToolTipCard>
 				</BadgeSection>
 			</UserCardContentRight>
+			<InviteDialog openDialog={openDialog} handleClose={handleClose}/>
 		</UserCardGrid>
 	);
 };
