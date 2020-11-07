@@ -12,7 +12,6 @@ const useStyles = makeStyles((theme) => ({
 	},
 	paper: {
 		backgroundColor: theme.palette.background.paper,
-		border: "2px solid #000",
 		boxShadow: theme.shadows[5],
 		padding: theme.spacing(2, 4, 3),
 	},
@@ -20,15 +19,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MsgModal(props) {
 	const classes = useStyles();
-	// const [open, setOpen] = useState(false);
-
-	// const handleOpen = () => {
-	// 	setOpen(true);
-	// };
-
-	// const handleClose = () => {
-	// 	setOpen(false);
-	// };
 
 	return (
 		<div>
@@ -37,7 +27,7 @@ export default function MsgModal(props) {
 				aria-describedby="transition-modal-description"
 				className={classes.modal}
 				open={props.isOpen}
-				onClose={props.isOpen}
+				onClose={props.isClosed}
 				closeAfterTransition
 				BackdropComponent={Backdrop}
 				BackdropProps={{
@@ -46,8 +36,9 @@ export default function MsgModal(props) {
 			>
 				<Fade in={props.isOpen}>
 					<div className={classes.paper}>
-						<h2 id="transition-modal-title">Transition modal</h2>
-						<p id="transition-modal-description">react-transition-group animates me.</p>
+						<h2 id="transition-modal-title">Search your project</h2>
+						<p id="transition-modal-description">Recent projects</p>
+						<button onClick={props.isClosed}>Close</button>
 					</div>
 				</Fade>
 			</Modal>

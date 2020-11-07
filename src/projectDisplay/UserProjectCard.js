@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
-const ProjectCardWrapper = styled.div`
+const UserProjectCardWrapper = styled.div`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     transition: 0.3s;
     width: 100%;
@@ -13,14 +13,14 @@ const ProjectCardWrapper = styled.div`
 `
 
 
-const ProjectCard = (props) => {
+const UserProjectCard = (props) => {
     return (
-        <ProjectCardWrapper>
+        <UserProjectCardWrapper>
             <div className="container">
                 <p>This is card container</p>
             </div>
-        </ProjectCardWrapper>
+        </UserProjectCardWrapper>
     )
 }
 
-export default ProjectCard;
+export default UserProjectCard;

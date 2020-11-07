@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+// default color: #6096ba #2974a6
+
 export const Wrapper = styled.div`
 	margin-right: auto;
 	margin-left: auto;
@@ -20,15 +22,19 @@ export const CustomCmdButton = styled.button`
 	font-size: 1em;
 	font-weight: bold;
 	text-decoration: none;
-	background-color: #6096ba;
+	background-color: ${(props) => (props.bgColor ? props.bgColor : "#6096ba")};
 	box-sizing: border-box;
 	border: 0;
 	cursor: pointer;
 	padding: 12px 12px;
-	border-radius: 10px;
+	border-radius: 15px;
 	margin-left: ${(props) => (props.ml ? props.ml + "rem" : 0)};
 	&:hover {
-		background-color: #2974a6;
+		background-color: ${(props) => (props.onHoverColor ? props.onHoverColor : "#2974a6")};
+	}
+	&:focus {
+		outline: none;
+		box-shadow: 0 0 0 3px rgba(21, 156, 228, 0.4);
 	}
 `;
 
@@ -105,6 +111,26 @@ export const ToolTipCard = styled.div`
 		&:before {
 			border-color: transparent transparent rgba(0, 0, 0, 0.8) rgba(0, 0, 0, 0.8);
 		}
+	}
+`;
+
+export const CustomIconButton = styled.button`
+	color: #fff;
+	position: relative;
+	font-family: Quicksand;
+	font-size: 1em;
+	text-decoration: none;
+	background-color: ${(props) => (props.bgColor ? props.bgColor : "#6096ba")};
+	box-sizing: border-box;
+	border: 0;
+	cursor: pointer;
+	padding: 0;
+	border-radius: 10px;
+	color: #000;
+	margin-left: ${(props) => (props.ml ? props.ml + "rem" : 0)};
+	&:focus {
+		outline: none;
+		box-shadow: 0 0 0 3px rgba(21, 156, 228, 0.4);
 	}
 `;
 

@@ -8,6 +8,7 @@ import {
 	ToolTipContent,
 } from "../StyledComponents/StyledComponents";
 import MsgModal from "./MsgModal.js";
+import InviteDialog from "./InviteDialog";
 
 const UserCardGrid = styled.div`
 	font-family: Quicksand;
@@ -82,15 +83,16 @@ const BadgeSection = styled.div`
 const CommandSection = styled.div``;
 
 const UserCard = (props) => {
-	const [open, setOpen] = useState(false);
+	const [openDialog, setOpenDialog] = React.useState(false);
 
-	const handleOpen = () => {
-		setOpen(true);
+	const handleClickOpen = () => {
+		setOpenDialog(true);
 	};
 
 	const handleClose = () => {
-		setOpen(false);
+		setOpenDialog(false);
 	};
+
 	return (
 		<UserCardGrid>
 			<UserCardContentLeft>
@@ -100,7 +102,7 @@ const UserCard = (props) => {
 				<NameSection>Kha Bui</NameSection>
 				<CommandSection>
 					<CustomCmdButton>Follow</CustomCmdButton>
-					<CustomCmdButton ml={0.6}>Invite</CustomCmdButton>
+					<CustomCmdButton onClick={handleClickOpen} ml={0.6}>Invite</CustomCmdButton>
 					<CustomCmdButton ml={0.6}>Message</CustomCmdButton>
 				</CommandSection>
 				<LegendSection>
@@ -142,6 +144,7 @@ const UserCard = (props) => {
 					</ToolTipCard>
 				</BadgeSection>
 			</UserCardContentRight>
+			<InviteDialog openDialog={openDialog} handleClose={handleClose}/>
 		</UserCardGrid>
 	);
 };

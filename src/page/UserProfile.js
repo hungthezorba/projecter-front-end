@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import UserCard from "../userDisplay/UserCard";
 import UserBackground from "../userDisplay/UserBackground";
-import ProjectCard from "../projectDisplay/ProjectCard";
+import UserProjectCard from "../projectDisplay/UserProjectCard";
 import {Wrapper}  from "../StyledComponents/StyledComponents.js";
 import styled from "styled-components";
 
@@ -36,9 +36,9 @@ const UserProfile = (props) => {
 				<UserCard />
 				<UserBackground />
 				<RightColumnWrapper>
-					<ProjectCard />
-					<ProjectCard />
-					<ProjectCard />
+					<UserProjectCard />
+					<UserProjectCard />
+					<UserProjectCard />
 				</RightColumnWrapper>
 			</UserProfileGrid>
 		</Wrapper>
